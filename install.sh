@@ -46,6 +46,7 @@ main() {
     mv .git/hooks/commit-msg .git/hooks/commit-msg.cache;
   fi
 
+  curl https://raw.githubusercontent.com/GloomyMeng/IM-Git-Hooks/master/commit-msg.sh -o .git/hooks/commit-msg
 #   curl https://raw.githubusercontent.com/razeencheng/git-hooks/master/git-commit-msg.sh -o .git/hooks/commit-msg
 #   curl https://raw.githubusercontent.com/razeencheng/git-hooks/master/golang-pre-commit.sh -o .git/hooks/pre-commit
 
