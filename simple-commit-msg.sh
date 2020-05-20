@@ -10,7 +10,11 @@ crashLogMsg() {
 
 COMMIT_MSG=`cat $1 | egrep "^(feat|fix|docs|refactor|build|chore|test)\[\w+\]?:\s(\S|\w)+"`
 RESULT=`cat $1 | egrep "^fix\[(crashed|normal)]?:\sjira\s[0-9]+"`
-if [ "$RESULT" = "" ]; then
-	crashLogMsg
-	exit 1
+if [[ "$COMMIT_MSG" =~ ^fix.* ]]; then
+	RESULT=`cat $1 | egrep "^fix\[(crashed|normal)]?:\sjira\s[0-9]+"`
+
+	if [ "$RESULT" = "" ]; then
+		crashLogMsg
+		exit 1
+	fi
 fi
