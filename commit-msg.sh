@@ -40,6 +40,3 @@ if [[ "$COMMIT_MSG" =~ ^fix.* ]]; then
 		exit 1
 	fi
 fi
-
-echo $COMMIT_MSG
-exit 1 
