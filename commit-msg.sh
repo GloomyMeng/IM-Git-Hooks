@@ -7,7 +7,7 @@ logMsg() {
 	echo "其中：feat:     增加新功能"
 	echo "     fix:      修复bug"
 	echo "     docs:     只改动了文档相关的内容"
-	echo "     build:    构造工具的或者外部依赖的改动，例如pod,bunld 等"
+	echo "     build:    构造工具的或者外部依赖的改动，例如pod,bundle 等"
 	echo "     refactor: 代码重构时使用"
 	echo "     test:     添加测试或者修改现有测试"
 }
