@@ -39,14 +39,16 @@ main() {
   fi
 
   if [ -f .git/hooks/pre-commit ]; then
-    mv .git/hooks/pre-commit .git/hooks/pre-commit.cache;
+    mv .git/hooks/pre-commit .git/hooks/pre-commit.bak;
   fi
 
   if [ -f .git/hooks/commit-msg ]; then
-    mv .git/hooks/commit-msg .git/hooks/commit-msg.cache;
+    mv .git/hooks/commit-msg .git/hooks/commit-msg.bak;
   fi
 
   curl https://raw.githubusercontent.com/GloomyMeng/IM-Git-Hooks/master/commit-msg.sh -o .git/hooks/commit-msg
+
+  chmod +x .git/hooks/commit-msg
 
   _green "commit-msg hook Install Success!"
 }
