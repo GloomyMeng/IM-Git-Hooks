@@ -14,7 +14,7 @@ logMsg() {
 
 crashLogMsg() {
 	echo "Fix Commit Message 不规范，请检查!具体格式需要满足："
-	echo "=> fix [(normal|crashed))]: 描述"
+	echo "=> fix [(normal|crashed))]: jira (BugID)"
 	
 	echo "其中：normal:     普通 bug"
 	echo "     crashed:    会引起 crash 的 bug"
