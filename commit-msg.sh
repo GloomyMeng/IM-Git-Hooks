@@ -20,6 +20,13 @@ crashLogMsg() {
 	echo "     crashed:    会引起 crash 的 bug"
 }
 
+# 忽略merge request
+MERGE_MSG=`cat $1 | egrep '^Merge branch*'`
+
+if [ "$MERGE_MSG" != "" ]; then
+    exit 0
+fi
+
 COMMIT_MSG=`cat $1 | egrep "^(feat|fix|docs|refactor|build|chore|test)\[\w+\]?:\s(\S|\w)+"`
 
 if [ "$COMMIT_MSG" = "" ]; then
